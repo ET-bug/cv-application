@@ -1,0 +1,92 @@
+/* Global Styles*/
+
+* {
+  font-family: 'Calibri', sans-serif;
+  padding: 0;
+  margin: 0;
+  color: black;
+  box-sizing: border-box;
+}
+
+:root {
+  background: #fcfcf8;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+p {
+  font-size: 30px;
+}
+
+/* Landing page elements*/
+
+.landing {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.form-signup {
+  display: flex;
+  gap: 10px;
+}
+
+.input-small {
+  font-size: 20px;
+  color: #b5b9bc;
+  border: solid 1px #b5b9bc;
+  border-radius: 10px;
+  width: 15vw;
+  height: 45px;
+  padding: 0px 10px;
+}
+
+.btn-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 20vw;
+  height: 45px;
+}
+
+.btn-primary {
+  position: relative;
+  border: solid 1px #ff6c4c;
+  background-color: #ff6c4c;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  transition: transform 0.15s ease;
+  z-index: 2;
+  transform: translateY(-4px);
+}
+
+.btn-shadow {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  border: solid 1px black;
+  border-radius: 10px;
+  z-index: 0;
+  /* transform 0.15s ease slows down movement, and cubic-bezier transform provides a 'springy-ness' to the button*/
+  transition: transform 0.15s ease, transform 0.2s cubic-bezier(.68, -.55, .265, 1.55);
+}
+
+.btn-wrapper.popup:hover .btn-primary {
+  transform: translateY(0px);
+}
+
+.btn-wrapper.popup:hover .btn-shadow {
+  opacity: 0;
+}
+
+
