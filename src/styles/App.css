@@ -16,13 +16,34 @@ h1 {
   font-size: 100px;
 }
 
+h2 {
+  font-size: 20px;
+}
+
 p {
   font-size: 30px;
 }
 
+.input__field-large {
+  font-size: 20px;
+  width: 15vw;
+  height: 45px;
+}
+
+.label {
+  font-size: 15px;
+  width: 15vw;
+}
+
+.input__field-small {
+  font-size: 15px;
+  height: 35px;
+  width: 200px;
+}
+
 /* Landing page elements*/
 
-.landing {
+.landingpage {
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -36,13 +57,10 @@ p {
   gap: 10px;
 }
 
-.input-small {
-  font-size: 20px;
+.input__field {
   color: #b5b9bc;
   border: solid 1px #b5b9bc;
   border-radius: 10px;
-  width: 15vw;
-  height: 45px;
   padding: 0px 10px;
 }
 
@@ -89,4 +107,41 @@ p {
   opacity: 0;
 }
 
+/* Form page elements*/
+
+.formpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 50px;
+}
+
+.form--section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 60vw;
+  border: solid 1px #b5b9bc;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.fieldinput {
+  display: flex; 
+  flex-direction: row;
+  text-align: left;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+}
+
+.duration {
+  display: flex; 
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
 
