@@ -146,6 +146,31 @@ function WorkSection({ data, onChange, onAdd }) {
 
 function Form() {
 
+    /* Set document state */
+
+    const [pdfData, setPdfData] = useState({
+        basic: {
+            fullName: '',
+            email: '',
+            linkedIn: ''
+        },
+        education: [{
+            university: '',
+            fromYear: '',
+            toYear: ''
+        }],
+        work: [{
+            company: '',
+            fromYear: '',
+            toYear: '',
+            description: ''
+        }]
+    });
+
+    const handleSubmit = () => {
+        setPdfData(formData);
+    };
+
     /* Set form state */
      
     const [formData, setFormData] = useState({
@@ -219,11 +244,10 @@ function Form() {
                 <BasicSection data={formData.basic} onChange={updateBasic} />
                 <EducationSection data={formData.education} onChange={updateEducation} onAdd={addEducation} />
                 <WorkSection data={formData.work} onChange={updateWork} onAdd={addWork} />
-                <Button className='btn-primary' text='Build My CV' variant='popup' />
+                <Button className='btn-primary' text='Build My CV' variant='popup' onClick={handleSubmit}/>
             </div>
             <div className='bodycolumn'>
-                <PDFViewer width="100%" height="100%">
-                <CVDocument data={formData} /></PDFViewer>
+                {pdfData && (<PDFViewer width='100%' height='100%'><CVDocument data={pdfData} /></PDFViewer>)}
             </div>
         </div>
   );
