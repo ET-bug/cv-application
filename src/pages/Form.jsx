@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import Button from '../components/button.jsx';
-
+import Button from '../components/Button.jsx';
+import { CVDocument } from '../components/CVDocument.jsx';
+import { PDFViewer } from '@react-pdf/renderer';
 
 /* Reusable Form Components */
 
@@ -213,11 +214,17 @@ function Form() {
     };
     
     return (
-        <div className='formpage'>
-            <BasicSection data={formData.basic} onChange={updateBasic} />
-            <EducationSection data={formData.education} onChange={updateEducation} onAdd={addEducation} />
-            <WorkSection data={formData.work} onChange={updateWork} onAdd={addWork} />
-            <Button className='btn-primary' text='Build My CV' variant='popup' />
+        <div className='mainbody'>
+            <div className='bodycolumn'>
+                <BasicSection data={formData.basic} onChange={updateBasic} />
+                <EducationSection data={formData.education} onChange={updateEducation} onAdd={addEducation} />
+                <WorkSection data={formData.work} onChange={updateWork} onAdd={addWork} />
+                <Button className='btn-primary' text='Build My CV' variant='popup' />
+            </div>
+            <div className='bodycolumn'>
+                <PDFViewer width="100%" height="100%">
+                <CVDocument data={formData} /></PDFViewer>
+            </div>
         </div>
   );
 }
