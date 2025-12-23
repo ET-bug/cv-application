@@ -86,7 +86,7 @@ function EducationSection({data, onChange, onAdd}) {
     <div className='form--section'>
         <h2>Education</h2>
         {data.map((edu,index) => (
-            <div key={index}>
+            <div className='section--block' key={index}>
                 <ShortInput
                     label='University'
                     value={edu.university}
@@ -99,7 +99,7 @@ function EducationSection({data, onChange, onAdd}) {
                 />
             </div>
         ))}
-        <Button text='Add another education' onClick={onAdd} />
+        <Button text='Add education' onClick={onAdd} />
     </div>
   );
 }
@@ -110,7 +110,7 @@ function WorkSection({ data, onChange, onAdd }) {
       <h2>Work Experience</h2>
 
       {data.map((job, index) => (
-        <div key={index}>
+        <div className='section--block' key={index}>
           <ShortInput
             label='Company'
             value={job.company}
@@ -135,7 +135,7 @@ function WorkSection({ data, onChange, onAdd }) {
         </div>
       ))}
 
-      <Button text='Add another job' onClick={onAdd} />
+      <Button text='Add job' onClick={onAdd} />
     </div>
   );
 }

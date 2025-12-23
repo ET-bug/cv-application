@@ -6,7 +6,6 @@
   margin: 0;
   color: black;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 :root {
@@ -48,7 +47,7 @@ p {
   height: 45px;
 }
 
-.btn-primary {
+.btn-primary.popup {
   position: relative;
   border: solid 1px #ff6c4c;
   background-color: #ff6c4c;
@@ -60,6 +59,19 @@ p {
   transition: transform 0.15s ease;
   z-index: 2;
   transform: translateY(-4px);
+}
+
+.btn-primary.normal { 
+  border: solid 1px black;
+  background-color: black;
+  color: white;
+  width: 80%;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  text-align: left;
+  padding: 0px 20px;
 }
 
 .btn-shadow {
@@ -103,6 +115,12 @@ p {
   border: solid 1px #b5b9bc;
   border-radius: 10px;
   background-color: white;
+}
+
+.section--block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .input__field {
