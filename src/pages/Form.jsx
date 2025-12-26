@@ -144,7 +144,7 @@ function WorkSection({ data, onChange, onAdd }) {
 
 /* Main Form */
 
-function Form() {
+function Form({initialData}) {
 
     /* Set document state */
 
@@ -175,8 +175,8 @@ function Form() {
      
     const [formData, setFormData] = useState({
         basic: {
-            fullName: '',
-            email: '',
+            fullName: initialData.fullName || '',
+            email: initialData.email || '',
             linkedIn: ''
         },
         education: [{
@@ -244,7 +244,7 @@ function Form() {
                 <BasicSection data={formData.basic} onChange={updateBasic} />
                 <EducationSection data={formData.education} onChange={updateEducation} onAdd={addEducation} />
                 <WorkSection data={formData.work} onChange={updateWork} onAdd={addWork} />
-                <Button className='btn-primary' text='Build My CV' variant='popup' onClick={handleSubmit}/>
+                <div className='btn-wrapper'><Button className='btn-primary' text='Build My CV' variant='popup' onClick={handleSubmit}/></div>
             </div>
             <div className='bodycolumn'>
                 {pdfData && (<PDFViewer width='100%' height='100%'><CVDocument data={pdfData} /></PDFViewer>)}

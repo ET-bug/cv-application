@@ -45,6 +45,7 @@ p {
   display: inline-block;
   width: 20vw;
   height: 45px;
+  margin-bottom: 50px;
 }
 
 .btn-primary.popup {
@@ -112,7 +113,6 @@ p {
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-  align-items: stretch;
 }
 
 .form--section {

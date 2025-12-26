@@ -5,12 +5,21 @@ import Form from './pages/Form.jsx';
 
 function App() {
   
-
+  const [started,setStarted] = useState(false);
+  const [initialData, setInitialData] = useState({fullName:'',email:''});
+  
+  const handleStart = ({fullName, email}) => {
+    setInitialData({fullName,email});
+    setStarted(true);
+  }
+  
   return (
     <>
-      {/*<Home />*/}
-      <Form />
-    
+      {started ? (
+        <Form initialData={initialData} />
+      ) : (
+        <Home onStart={handleStart} />
+      )}
     </>
   )
 }
